@@ -23,6 +23,7 @@ public class PlayerInfo : MonoBehaviour
     void Start()
     {
         playerName = "Waiting to Join";
+        playerNumber= "100";
 
         // This needs to be changed to how ever the server sends a players color over.
         playerColor = 1;
