@@ -15,6 +15,7 @@ public class PlayerInfo : MonoBehaviour
     public string playerName;
     public Text PlayerNumber;
     public string playerNumber;
+    public int gameStarted;
 
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class PlayerInfo : MonoBehaviour
     {
         playerName = "Waiting to Join";
         playerNumber = "100";
+        gameStarted = 0;
 
         // This needs to be changed to how ever the server sends a players color over.
         playerColor = 1;

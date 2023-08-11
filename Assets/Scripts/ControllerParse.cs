@@ -63,12 +63,19 @@ public class ControllerParse: MonoBehaviour
             UpdateNumber(client,msg,currentPlayer);
         }
 
+        else if (msg.Contains("RequestGameState("))
+        {
+            RequestGameState(client, msg, currentPlayer);
+            
+        }
+
     }
 
     public void UpdatePlayer(string client, string msg, PlayerInfo CurrentPlayer)
     {
         string playerName =  msg.Substring(10, msg.Length-11);
         CurrentPlayer.playerName = playerName;
+        CurrentPlayer.gameStarted = 1;
         controlpads_glue.SendControlpadMessage(client, playerName);
 
     }
@@ -97,6 +104,13 @@ public class ControllerParse: MonoBehaviour
         string playerNumber = msg.Substring(13, msg.Length-14);
 
         CurrentPlayer.playerNumber = playerNumber;
+    }
+
+      public void RequestGameState(string client, string msg, PlayerInfo CurrentPlayer)
+    {
+        string gamestate = "RequestGameState(" + CurrentPlayer.gameStarted + "," + CurrentPlayer.playerName + "," + CurrentPlayer.playerColor +")";
+        controlpads_glue.SendControlpadMessage(client, gamestate);
+
     }
 
 
