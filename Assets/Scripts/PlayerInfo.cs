@@ -24,10 +24,7 @@ public class PlayerInfo : MonoBehaviour
         playerName = "Waiting to Join";
         playerNumber = "100";
         gameStarted = 0;
-
-        // This needs to be changed to how ever the server sends a players color over.
-        playerColor = 1;
-
+        playerColor = 4;
 
     }
     // Update is called once per frame
@@ -35,10 +32,12 @@ public class PlayerInfo : MonoBehaviour
     {
         PlayerName.text = playerName;
         PlayerNumber.text = playerNumber;
-
-        playmat.GetComponent<MeshRenderer>().material = materials[playerColor];
-
     }
 
+    // This function will return the Material color code 0-3
+    public Material getMaterial()
+    {
+        return materials[playerColor];
+    }
 
 }

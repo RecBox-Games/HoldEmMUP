@@ -668,14 +668,15 @@ MonoBehaviour:
   playmat: {fileID: 1860984373}
   materials:
   - {fileID: 2100000, guid: e3d97189beb6f7b4d8d698c9e955d4b3, type: 2}
-  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: adf5f83d6ab9b4545822d42242ffcf32, type: 2}
+  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   PlayerName: {fileID: 0}
   playerName: 
   PlayerNumber: {fileID: 0}
   playerNumber: 
+  gameStarted: 0
 --- !u!114 &642347258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,6 +849,7 @@ GameObject:
   - component: {fileID: 1029721271}
   - component: {fileID: 1029721270}
   - component: {fileID: 1029721269}
+  - component: {fileID: 1029721273}
   m_Layer: 0
   m_Name: Playmat 3
   m_TagString: Untagged
@@ -941,6 +943,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 736056655}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1029721273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029721268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3866b627c6deb9a44bd4f0be83c77df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInfo: {fileID: 2117457014}
+  material: {fileID: 0}
 --- !u!1 &1365953659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,14 +1346,15 @@ MonoBehaviour:
   playmat: {fileID: 2109014362}
   materials:
   - {fileID: 2100000, guid: e3d97189beb6f7b4d8d698c9e955d4b3, type: 2}
-  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: adf5f83d6ab9b4545822d42242ffcf32, type: 2}
+  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   PlayerName: {fileID: 0}
   playerName: 
   PlayerNumber: {fileID: 0}
   playerNumber: 
+  gameStarted: 0
 --- !u!114 &1709303849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,14 +1495,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830352826}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3866b627c6deb9a44bd4f0be83c77df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 4330374559752775049}
   material: {fileID: 0}
-  Object: {fileID: 1830352826}
 --- !u!1 &1860984373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,6 +1514,7 @@ GameObject:
   - component: {fileID: 1860984376}
   - component: {fileID: 1860984375}
   - component: {fileID: 1860984374}
+  - component: {fileID: 1860984378}
   m_Layer: 0
   m_Name: Playmat 4
   m_TagString: Untagged
@@ -1591,6 +1608,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 736056655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860984378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860984373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3866b627c6deb9a44bd4f0be83c77df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInfo: {fileID: 642347257}
+  material: {fileID: 0}
 --- !u!1 &2109014362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,14 +1649,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109014362}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3866b627c6deb9a44bd4f0be83c77df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInfo: {fileID: 0}
-  material: {fileID: 2100000, guid: e3d97189beb6f7b4d8d698c9e955d4b3, type: 2}
-  Object: {fileID: 2109014362}
+  playerInfo: {fileID: 1709303848}
+  material: {fileID: 0}
 --- !u!65 &2109014364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1762,14 +1792,15 @@ MonoBehaviour:
   playmat: {fileID: 1029721268}
   materials:
   - {fileID: 2100000, guid: e3d97189beb6f7b4d8d698c9e955d4b3, type: 2}
-  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: adf5f83d6ab9b4545822d42242ffcf32, type: 2}
+  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   PlayerName: {fileID: 0}
   playerName: 
   PlayerNumber: {fileID: 0}
   playerNumber: 
+  gameStarted: 0
 --- !u!114 &2117457015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,14 +1940,15 @@ MonoBehaviour:
   playmat: {fileID: 1830352826}
   materials:
   - {fileID: 2100000, guid: e3d97189beb6f7b4d8d698c9e955d4b3, type: 2}
-  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: adf5f83d6ab9b4545822d42242ffcf32, type: 2}
+  - {fileID: 2100000, guid: 81a4f6bb3d143f7469a4e34164a1a0a9, type: 2}
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   PlayerName: {fileID: 1522975518249179276}
   playerName: 
   PlayerNumber: {fileID: 0}
   playerNumber: 
+  gameStarted: 0
 --- !u!1 &4379206248311146886
 GameObject:
   m_ObjectHideFlags: 0

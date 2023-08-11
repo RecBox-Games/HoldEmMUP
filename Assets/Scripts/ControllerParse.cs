@@ -83,19 +83,25 @@ public class ControllerParse: MonoBehaviour
     public void UpdateColor(string client, string msg, PlayerInfo CurrentPlayer)
     {
         string playerColor = msg.Substring(12, msg.Length-13);
-        int colorCode = 0;
-        if (playerColor == "green")
+        int colorCode;
+
+        if (playerColor == "red")
+        {
+            colorCode = 0;
+        }
+        else if (playerColor == "blue")
         {
             colorCode = 1;
         }
-        else if (playerColor == "blue")
+        else if (playerColor == "green")
         {
             colorCode = 2;
         }
         else if (playerColor == "yellow")
         {
             colorCode = 3;
-        }
+        } else { colorCode = 4; }
+
         CurrentPlayer.playerColor = colorCode;
     }
 
