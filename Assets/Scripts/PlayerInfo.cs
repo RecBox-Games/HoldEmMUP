@@ -9,10 +9,14 @@ public class PlayerInfo : MonoBehaviour
 
     [SerializeField] Object playmat;
     [SerializeField] List<Material> materials = new List<Material>();
-    [SerializeField] int playerColor;
+    [SerializeField] public int playerColor;
+    
+
 
     public Text PlayerName;
     public string playerName;
+    public Text PlayerNumber;
+    public string playerNumber;
     
 
         // Start is called before the first frame update
@@ -29,6 +33,8 @@ public class PlayerInfo : MonoBehaviour
     void Update()
     {
         PlayerName.text = playerName;
+        PlayerNumber.text = playerNumber;
+
         playmat.GetComponent<MeshRenderer>().material = materials[playerColor];
 
     }

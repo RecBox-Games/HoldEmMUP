@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestScript: MonoBehaviour
+public class ControllerParse: MonoBehaviour
 {
     [SerializeField]
     public PlayerInfo Player1;
@@ -23,41 +23,85 @@ public class TestScript: MonoBehaviour
         
     }
 
-    public void newPlayer(string client, string msg)
+    public void MessageParse(string client, string msg)
     {
+        PlayerInfo currentPlayer = null;
+
+        if(client == "0x1-0")
+        {
+            currentPlayer = Player1;
+        }
+        else if(client == "0x1-1")
+        {
+            currentPlayer = Player2;
+
+        }
+        else if(client == "0x1-2")
+        {
+            currentPlayer = Player3;
+
+        }
+        else if(client == "0x1-3")
+        {
+            currentPlayer = Player4;
+        }
+
+
         if(msg.Contains("NewPlayer("))
         {
-            string playerName = msg;
-            playerName =  msg.Substring(10, msg.Length-11);
+            UpdatePlayer(client,msg,currentPlayer);
+            
+        }
 
-            if(client == "0x1-0")
-            {
-                Player1.playerName = playerName;
-            }
-            else if(client == "0x1-1")
-            {
-                Player2.playerName = playerName;
+        else if(msg.Contains("PlayerColor("))
+        {
+            UpdateColor(client,msg,currentPlayer);
+        }
 
-            }
-            else if(client == "0x1-2")
-            {
-                Player3.playerName = playerName;
-
-            }
-            else if(client == "0x1-3")
-            {
-                Player4.playerName = playerName;
-
-            }
-            else
-            {
-                playerName = "Lobby is full";
-            }
-
-            controlpads_glue.SendControlpadMessage(client, playerName);
+        else if (msg.Contains("UpdateNumber("))
+        {
+            UpdateNumber(client,msg,currentPlayer);
         }
 
     }
-        
+
+    public void UpdatePlayer(string client, string msg, PlayerInfo CurrentPlayer)
+    {
+        string playerName =  msg.Substring(10, msg.Length-11);
+        CurrentPlayer.playerName = playerName;
+        controlpads_glue.SendControlpadMessage(client, playerName);
+
+    }
+
+    public void UpdateColor(string client, string msg, PlayerInfo CurrentPlayer)
+    {
+        string playerColor = msg.Substring(12, msg.Length-13);
+        int colorCode = 0;
+        if (playerColor == "blue")
+        {
+            colorCode = 1;
+        }
+        else if (playerColor == "green")
+        {
+            colorCode = 2;
+        }
+        else if (playerColor == "yellow")
+        {
+            colorCode = 3;
+        }
+        CurrentPlayer.playerColor = colorCode;
+    }
+
+        public void UpdateNumber(string client, string msg, PlayerInfo CurrentPlayer)
+    {
+        string playerNumber = msg.Substring(13, msg.Length-14);
+
+        CurrentPlayer.playerNumber = playerNumber;
+    }
+
+
 
 }
+        
+
+
