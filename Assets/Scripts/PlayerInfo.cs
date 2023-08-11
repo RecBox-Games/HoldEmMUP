@@ -9,21 +9,19 @@ public class PlayerInfo : MonoBehaviour
 
     [SerializeField] Object playmat;
     [SerializeField] List<Material> materials = new List<Material>();
-    [SerializeField] public int playerColor;
+    public int playerColor;
     
-
-
     public Text PlayerName;
     public string playerName;
     public Text PlayerNumber;
     public string playerNumber;
-    
 
-        // Start is called before the first frame update
+
+    // Start is called before the first frame update
     void Start()
     {
         playerName = "Waiting to Join";
-        playerNumber= "100";
+        playerNumber = "100";
 
         // This needs to be changed to how ever the server sends a players color over.
         playerColor = 1;
