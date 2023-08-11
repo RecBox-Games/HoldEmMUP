@@ -77,11 +77,11 @@ public class ControllerParse: MonoBehaviour
     {
         string playerColor = msg.Substring(12, msg.Length-13);
         int colorCode = 0;
-        if (playerColor == "blue")
+        if (playerColor == "green")
         {
             colorCode = 1;
         }
-        else if (playerColor == "green")
+        else if (playerColor == "blue")
         {
             colorCode = 2;
         }
