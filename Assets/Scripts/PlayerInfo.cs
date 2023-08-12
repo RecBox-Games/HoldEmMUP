@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class PlayerInfo : MonoBehaviour
 {
-
-    [SerializeField] Object playmat;
     [SerializeField] List<Material> materials = new List<Material>();
     public int playerColor;
-    
+    public int currentCard;
+    public cardController cardNumber;
+    private int lastCard;
     public Text PlayerName;
     public string playerName;
     public Text PlayerNumber;
@@ -32,12 +32,27 @@ public class PlayerInfo : MonoBehaviour
     {
         PlayerName.text = playerName;
         PlayerNumber.text = playerNumber;
+
+        // Check if the player has a new card that they are using
+        if (currentCard != lastCard)
+        {
+            // Have the card controller change the number
+            cardNumber.changeCardNumber(currentCard);
+        }
+        
+        lastCard = currentCard;
+
     }
 
     // This function will return the Material color code 0-3
     public Material getMaterial()
     {
         return materials[playerColor];
+    }
+
+    public int getPlayedCard()
+    {
+        return currentCard;
     }
 
 }
