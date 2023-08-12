@@ -672,10 +672,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   currentCard: 0
-  cardNumber: {fileID: 0}
-  PlayerName: {fileID: 0}
+  cardNumber: {fileID: 1563301208}
+  PlayerName: {fileID: 1699896723}
   playerName: 
-  PlayerNumber: {fileID: 0}
+  PlayerNumber: {fileID: 529985704}
   playerNumber: 
   gameStarted: 0
 --- !u!114 &642347258
@@ -856,7 +856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &889744279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1536,10 +1536,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   currentCard: 0
-  cardNumber: {fileID: 0}
-  PlayerName: {fileID: 0}
+  cardNumber: {fileID: 1563301208}
+  PlayerName: {fileID: 159462225}
   playerName: 
-  PlayerNumber: {fileID: 0}
+  PlayerNumber: {fileID: 328650127}
   playerNumber: 
   gameStarted: 0
 --- !u!114 &1709303849
@@ -2073,10 +2073,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   currentCard: 0
-  cardNumber: {fileID: 0}
-  PlayerName: {fileID: 0}
+  cardNumber: {fileID: 1563301208}
+  PlayerName: {fileID: 159170081}
   playerName: 
-  PlayerNumber: {fileID: 0}
+  PlayerNumber: {fileID: 558328147}
   playerNumber: 
   gameStarted: 0
 --- !u!114 &2117457015
@@ -2222,10 +2222,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 007d96111f56a974297c1587a8a49554, type: 2}
   playerColor: 0
   currentCard: 0
-  cardNumber: {fileID: 0}
+  cardNumber: {fileID: 1563301208}
   PlayerName: {fileID: 1522975518249179276}
   playerName: 
-  PlayerNumber: {fileID: 0}
+  PlayerNumber: {fileID: 7591538788733731164}
   playerNumber: 
   gameStarted: 0
 --- !u!1 &4379206248311146886
