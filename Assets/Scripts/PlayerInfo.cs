@@ -10,6 +10,7 @@ public class PlayerInfo : MonoBehaviour
     public int playerColor;
     public int currentCard;
     public cardController cardNumber;
+    public cardController cardNumber2;
     private int lastCard;
     public Text PlayerName;
     public string playerName;
@@ -24,7 +25,7 @@ public class PlayerInfo : MonoBehaviour
         playerName = "Waiting to Join";
         playerNumber = "100";
         gameStarted = 0;
-        playerColor = 0;
+        playerColor = 4;
 
     }
     // Update is called once per frame
@@ -38,6 +39,7 @@ public class PlayerInfo : MonoBehaviour
         {
             // Have the card controller change the number
             cardNumber.changeCardNumber(currentCard);
+            cardNumber2.changeCardNumber(currentCard);
         }
         
         lastCard = currentCard;
