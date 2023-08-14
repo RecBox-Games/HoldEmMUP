@@ -11,6 +11,10 @@ public class ControllerParse: MonoBehaviour
     public PlayerInfo Player2;
     public PlayerInfo Player3;
     public PlayerInfo Player4;
+    public GameObject PlayingCard;
+    public Text CardNumber;
+    public string CardValue;
+    public int CardColor;
 
     // Start is called before the first frame update
     void Start()
@@ -114,15 +118,46 @@ public class ControllerParse: MonoBehaviour
 
       public void RequestGameState(string client, string msg, PlayerInfo CurrentPlayer)
     {
-        string gamestate = "RequestGameState(" + CurrentPlayer.gameStarted + "," + CurrentPlayer.playerName + "," + CurrentPlayer.playerColor +")";
+        string gamestate = "RequestGameState(" + CurrentPlayer.gameStarted + "," + CurrentPlayer.playerName + "," + CurrentPlayer.playerColor + "," + CurrentPlayer.playerNumber + ")";
         controlpads_glue.SendControlpadMessage(client, gamestate);
 
     }
 
     public void CardSent(string client, string msg, PlayerInfo CurrentPlayer)
     {
+        PlayingCard.SetActive(true);
         string cardNumber = msg.Substring(9, msg.Length-10);
+        CardColor = CurrentPlayer.playerColor;
+
+        CardValue = cardNumber;
         CurrentPlayer.currentCard = Int32.Parse(cardNumber);
+        CardNumber.text = CardValue;
+        string color = "";
+        if (CardColor == 0)
+        {
+            PlayingCard.GetComponent<Image>().color = new Color(255,0,0);
+
+        }
+        else if (CardColor == 1)
+        {
+            PlayingCard.GetComponent<Image>().color = new Color(0,0,255);
+
+        }
+        else if (CardColor == 2)
+        {
+            PlayingCard.GetComponent<Image>().color = new Color(0,255,0);
+
+
+        }
+        else if (CardColor == 3)
+        {
+            PlayingCard.GetComponent<Image>().color = new Color(255,255,0);
+
+        }
+
+
+        
+         
 
     }
 
