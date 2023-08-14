@@ -24,7 +24,7 @@ public class PlayerInfo : MonoBehaviour
         playerName = "Waiting to Join";
         playerNumber = "100";
         gameStarted = 0;
-        playerColor = 4;
+        playerColor = 0;
 
     }
     // Update is called once per frame

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ControllerParse: MonoBehaviour
 {
@@ -63,6 +64,11 @@ public class ControllerParse: MonoBehaviour
             UpdateNumber(client,msg,currentPlayer);
         }
 
+        else if (msg.Contains("CardSent("))
+        {
+            CardSent(client ,msg ,currentPlayer);
+        }
+
         else if (msg.Contains("RequestGameState("))
         {
             RequestGameState(client, msg, currentPlayer);
@@ -110,6 +116,13 @@ public class ControllerParse: MonoBehaviour
     {
         string gamestate = "RequestGameState(" + CurrentPlayer.gameStarted + "," + CurrentPlayer.playerName + "," + CurrentPlayer.playerColor +")";
         controlpads_glue.SendControlpadMessage(client, gamestate);
+
+    }
+
+    public void CardSent(string client, string msg, PlayerInfo CurrentPlayer)
+    {
+        string cardNumber = msg.Substring(9, msg.Length-10);
+        CurrentPlayer.currentCard = Int32.Parse(cardNumber);
 
     }
 
